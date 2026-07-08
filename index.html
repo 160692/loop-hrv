@@ -22,15 +22,12 @@
       border-radius: 20px;
       padding: 2.5rem;
       width: 100%;
-      max-width: 720px;
+      max-width: 740px;
       color: #e8e8e8;
     }
     .header {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 20px;
+      margin-bottom: 2rem; padding-bottom: 1.5rem;
       border-bottom: 1px solid #2a2a2a;
     }
     .logo-img { width: 60px; height: auto; }
@@ -41,11 +38,27 @@
     .meta-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; }
     .meta-val { font-size: 13px; color: #888; margin-top: 3px; }
 
+    /* METHOD BANNER */
+    .method-banner {
+      background: #1a2a1a;
+      border: 1px solid #2a3d2a;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .method-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .method-text { font-size: 12px; color: #7aaa7a; line-height: 1.6; }
+    .method-text strong { color: #8DC63F; }
+
     .phases { display: flex; flex-direction: column; gap: 10px; }
     .phase { border-radius: 12px; border: 1px solid #2a2a2a; overflow: hidden; }
     .phase-header {
       display: flex; align-items: center; gap: 12px;
       padding: 16px 18px; cursor: pointer; user-select: none;
+      transition: background .15s;
     }
     .phase-header:hover { background: #222; }
     .phase-num {
@@ -53,49 +66,73 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 12px; font-weight: 600; flex-shrink: 0;
     }
-    .n-done  { background: #1c3a1c; color: #6DBF6D; }
-    .n-active { background: #12303d; color: #3A9BAF; }
+    .n-done    { background: #1c3a1c; color: #6DBF6D; }
+    .n-active  { background: #12303d; color: #3A9BAF; }
     .n-pending { background: #262626; color: #555; border: 1px solid #333; }
     .phase-info { flex: 1; }
     .phase-title { font-size: 14px; font-weight: 500; color: #ddd; }
     .phase-sub { font-size: 12px; color: #555; margin-top: 3px; }
-    .badge { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 20px; letter-spacing: .4px; }
+    .badge { font-size: 10px; font-weight: 600; padding: 4px 10px; border-radius: 20px; letter-spacing: .4px; white-space: nowrap; }
     .b-done    { background: #1c3a1c; color: #6DBF6D; }
     .b-active  { background: #12303d; color: #3A9BAF; }
     .b-pending { background: #262626; color: #555; }
     .chevron { font-size: 11px; color: #444; margin-left: 6px; transition: transform .2s; display: inline-block; }
     .chevron.open { transform: rotate(180deg); }
 
-    .phase-body { display: none; padding: 0 18px 16px; }
+    .phase-body { display: none; padding: 0 18px 18px; }
     .phase-body.open { display: block; }
 
-    .progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .progress-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
     .bar-bg { flex: 1; height: 3px; background: #2a2a2a; border-radius: 3px; overflow: hidden; }
     .bar-fill { height: 100%; border-radius: 3px; }
     .fill-green { background: linear-gradient(90deg, #4a9a3a, #8DC63F); }
     .fill-blue  { background: linear-gradient(90deg, #1e7a9a, #3A9BAF); }
     .bar-pct { font-size: 11px; color: #555; min-width: 28px; text-align: right; }
 
+    /* PROCESS NOTE */
+    .process-note {
+      background: #1a1a2a;
+      border-left: 2px solid #3A9BAF;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: #6a8aaa;
+      line-height: 1.6;
+    }
+    .process-note strong { color: #3A9BAF; }
+
     .milestones { display: flex; flex-direction: column; }
+
+    /* STEP GROUP */
+    .step-group { margin-bottom: 6px; }
+    .step-group-label {
+      font-size: 10px; font-weight: 600; color: #444;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      padding: 8px 0 4px;
+    }
+
     .milestone {
       display: flex; align-items: flex-start; gap: 10px;
-      padding: 9px 0; border-bottom: 1px solid #252525;
+      padding: 8px 0; border-bottom: 1px solid #252525;
     }
     .milestone:last-child { border-bottom: none; }
-    .m-icon {
-      width: 18px; height: 18px; border-radius: 50%;
+    .m-step {
+      width: 20px; height: 20px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 9px; flex-shrink: 0; margin-top: 1px;
+      font-size: 9px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+      border: 1px solid #333;
     }
-    .i-done   { background: #1c3a1c; color: #6DBF6D; }
-    .i-prog   { background: #12303d; color: #3A9BAF; }
-    .i-pend   { background: #232323; color: #444; border: 1px solid #333; }
-    .m-text   { font-size: 13px; color: #aaa; line-height: 1.4; flex: 1; }
-    .m-tag    { font-size: 10px; padding: 2px 8px; border-radius: 8px; flex-shrink: 0; font-weight: 500; margin-top: 2px; }
-    .t-done   { background: #1c3a1c; color: #6DBF6D; }
-    .t-prog   { background: #12303d; color: #3A9BAF; }
-    .t-pend   { background: #232323; color: #555; }
-    .t-soon   { background: #2a1e08; color: #a07830; }
+    .m-step.done  { background: #1c3a1c; color: #6DBF6D; border-color: #2a4a2a; }
+    .m-step.prog  { background: #12303d; color: #3A9BAF; border-color: #1a3d4a; }
+    .m-step.pend  { background: #1e1e1e; color: #444; }
+    .m-text { font-size: 13px; color: #aaa; line-height: 1.45; flex: 1; }
+    .m-text small { display: block; font-size: 11px; color: #555; margin-top: 2px; }
+    .m-tag { font-size: 10px; padding: 2px 8px; border-radius: 8px; flex-shrink: 0; font-weight: 500; margin-top: 3px; }
+    .t-done { background: #1c3a1c; color: #6DBF6D; }
+    .t-prog { background: #12303d; color: #3A9BAF; }
+    .t-pend { background: #1e1e1e; color: #555; border: 1px solid #2a2a2a; }
+    .t-soon { background: #2a1e08; color: #a07830; }
 
     .footer {
       margin-top: 2rem; padding-top: 1.25rem;
@@ -105,6 +142,47 @@
     .footer-note { font-size: 11px; color: #444; }
     .footer-url  { font-size: 12px; color: #3A9BAF; opacity: .5; }
 
+
+
+    .bloque { border-radius: 8px; border: 1px solid #2a2a2a; margin-bottom: 8px; overflow: hidden; }
+    .bloque-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; cursor: pointer; user-select: none;
+      background: #1a1a1a; transition: background .15s;
+    }
+    .bloque-header:hover { background: #202020; }
+    .bloque-icon { font-size: 13px; flex-shrink: 0; }
+    .bloque-title { font-size: 13px; font-weight: 500; color: #ccc; flex: 1; }
+    .bloque-badge { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 12px; }
+    .bb-active  { background: #12303d; color: #3A9BAF; }
+    .bb-next    { background: #1e1e1e; color: #555; border: 1px solid #2a2a2a; }
+    .bloque-chev { font-size: 10px; color: #444; transition: transform .2s; display: inline-block; margin-left: 4px; }
+    .bloque-chev.open { transform: rotate(180deg); }
+    .bloque-body { display: none; padding: 10px 14px 14px; border-top: 1px solid #232323; }
+    .bloque-body.open { display: block; }
+    .cycle-step {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 7px 0; border-bottom: 1px solid #222;
+    }
+    .cycle-step:last-child { border-bottom: none; }
+    .cs-num {
+      width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: 700; margin-top: 1px;
+    }
+    .cs-done { background: #1c3a1c; color: #6DBF6D; }
+    .cs-prog  { background: #12303d; color: #3A9BAF; }
+    .cs-pend  { background: #1e1e1e; color: #444; border: 1px solid #2a2a2a; }
+    .cs-text  { font-size: 12px; color: #999; line-height: 1.45; flex: 1; }
+    .cs-text small { display: block; font-size: 11px; color: #555; margin-top: 2px; }
+    .cs-tag   { font-size: 10px; padding: 2px 7px; border-radius: 8px; flex-shrink: 0; font-weight: 500; margin-top: 2px; }
+    .ct-done  { background: #1c3a1c; color: #6DBF6D; }
+    .ct-prog  { background: #12303d; color: #3A9BAF; }
+    .ct-pend  { background: #1e1e1e; color: #555; border: 1px solid #252525; }
+    .ct-next  { background: #2a1e08; color: #a07830; }
+    .subpasos { margin-top: 6px; display: flex; flex-direction: column; gap: 3px; }
+    .subpaso { font-size: 11px; color: #555; line-height: 1.5; display: flex; gap: 6px; }
+    .sub-dot { color: #3A9BAF; flex-shrink: 0; }
     @media (max-width: 520px) {
       .card { padding: 1.25rem; }
       .header { gap: 12px; }
@@ -129,6 +207,13 @@
     </div>
   </div>
 
+  <div class="method-banner">
+    <div class="method-icon">⚙</div>
+    <div class="method-text">
+      <strong>Cómo avanzamos:</strong> Cada fase comienza con una etapa de <strong>exploración</strong> — relevamos la operación real de HRV y la contrastamos con lo que LOOP tiene desarrollado. Con eso documentamos los ajustes necesarios, los resolvemos en desarrollo y los desplegamos en un <strong>ambiente controlado</strong> antes de operar en campo.
+    </div>
+  </div>
+
   <div class="phases">
 
     <!-- FASE 0 -->
@@ -148,11 +233,11 @@
           <span class="bar-pct">80%</span>
         </div>
         <div class="milestones">
-          <div class="milestone"><div class="m-icon i-done">✓</div><div class="m-text">Acuerdo de confidencialidad (NDA) firmado</div><span class="m-tag t-done">Listo</span></div>
-          <div class="milestone"><div class="m-icon i-done">✓</div><div class="m-text">Metodología de cálculo CO₂ acordada con HRV</div><span class="m-tag t-done">Listo</span></div>
-          <div class="milestone"><div class="m-icon i-done">✓</div><div class="m-text">Apps instaladas en dispositivos HRV (Usuario + Acopio)</div><span class="m-tag t-done">Listo</span></div>
-          <div class="milestone"><div class="m-icon i-done">✓</div><div class="m-text">Sesión de kick-off completada con el equipo HRV</div><span class="m-tag t-done">Listo</span></div>
-          <div class="milestone"><div class="m-icon i-prog">→</div><div class="m-text">Convenio de colaboración en proceso de envío</div><span class="m-tag t-prog">En proceso</span></div>
+          <div class="milestone"><div class="m-step done">✓</div><div class="m-text">Acuerdo de confidencialidad (NDA) firmado</div><span class="m-tag t-done">Listo</span></div>
+          <div class="milestone"><div class="m-step done">✓</div><div class="m-text">Metodología de cálculo CO₂ acordada con HRV</div><span class="m-tag t-done">Listo</span></div>
+          <div class="milestone"><div class="m-step done">✓</div><div class="m-text">Apps instaladas en dispositivos HRV (Usuario + Acopio)</div><span class="m-tag t-done">Listo</span></div>
+          <div class="milestone"><div class="m-step done">✓</div><div class="m-text">Sesión de kick-off completada con el equipo HRV</div><span class="m-tag t-done">Listo</span></div>
+          <div class="milestone"><div class="m-step prog">→</div><div class="m-text">Convenio de colaboración en proceso de envío y firma</div><span class="m-tag t-prog">En proceso</span></div>
         </div>
       </div>
     </div>
@@ -162,23 +247,94 @@
       <div class="phase-header" onclick="toggle('p1')">
         <div class="phase-num n-active">1</div>
         <div class="phase-info">
-          <div class="phase-title">Piloto operativo</div>
-          <div class="phase-sub">Acopio en campo, registro y primeros flujos</div>
+          <div class="phase-title">Piloto interno</div>
+          <div class="phase-sub">Semanas 1–8 · Acopio, recolección y trazabilidad sin exposición pública</div>
         </div>
         <span class="badge b-active">En curso</span>
         <span class="chevron open" id="chev-p1">▼</span>
       </div>
       <div class="phase-body open" id="body-p1">
         <div class="progress-row">
-          <div class="bar-bg"><div class="bar-fill fill-blue" style="width:20%"></div></div>
-          <span class="bar-pct">20%</span>
+          <div class="bar-bg"><div class="bar-fill fill-blue" style="width:55%"></div></div>
+          <span class="bar-pct">15%</span>
         </div>
-        <div class="milestones">
-          <div class="milestone"><div class="m-icon i-prog">→</div><div class="m-text">Capacitación a operadores del punto de acopio HRV</div><span class="m-tag t-soon">Esta semana</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Registro de los primeros acopios desde el punto HRV</div><span class="m-tag t-pend">Próximo</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Activación de la comunidad Micelio en HRV</div><span class="m-tag t-pend">Próximo</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Primeras recompensas entregadas a la comunidad</div><span class="m-tag t-pend">Próximo</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Flujo completo de acopio → registro → trazabilidad validado</div><span class="m-tag t-pend">Próximo</span></div>
+
+        <div class="process-note">
+          <strong>Metodología:</strong> Para cada bloque funcional seguimos el mismo ciclo — validamos los requerimientos con la operación real de HRV, hacemos el fit con la tecnología de LOOP, liberamos los features necesarios, implementamos en ambiente controlado, hacemos pruebas con el equipo y validamos oficialmente. A partir de esa validación, HRV opera libremente con ese bloque.
+        </div>
+
+        <!-- BLOQUE 1: ACOPIO -->
+        <div class="bloque" id="b1">
+          <div class="bloque-header" onclick="toggleB('b1')">
+            <span class="bloque-icon">📦</span>
+            <span class="bloque-title">Acopio</span>
+            <span class="bloque-badge bb-active">En curso</span>
+            <span class="bloque-chev open" id="bchev-b1">▼</span>
+          </div>
+          <div class="bloque-body open" id="bbody-b1">
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Requerimientos escritos de HRV<small>Documentación entregada por HRV sobre el flujo de acopio</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Validación con operación real + comentarios<small>Levantamiento en campo y contraste con la operación actual de HRV</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Fit con tecnología LOOP desarrollada<small>Comparación de requerimientos vs. funcionalidades actuales de la plataforma</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Liberación de features<small>Acopio directo sin solicitud, usuarios anónimos, registro fotográfico, módulos por rol</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-prog">→</div><div class="cs-text">Implementación en ambiente controlado y pruebas con HRV<small>Validación del concepto de acopio con el equipo operativo de HRV</small></div><span class="cs-tag ct-prog">Siguiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">6</div><div class="cs-text">Validación oficial → operación libre<small>A partir de esta fecha HRV opera el acopio de forma autónoma</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+          </div>
+        </div>
+
+        <!-- BLOQUE 2: RECOLECCIÓN -->
+        <div class="bloque" id="b2">
+          <div class="bloque-header" onclick="toggleB('b2')">
+            <span class="bloque-icon">🚲</span>
+            <span class="bloque-title">Recolección</span>
+            <span class="bloque-badge bb-next">Próximo</span>
+            <span class="bloque-chev" id="bchev-b2">▼</span>
+          </div>
+          <div class="bloque-body" id="bbody-b2">
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Requerimientos escritos de HRV<small>Documentación entregada por HRV sobre recolección a domicilios externos</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">2</div><div class="cs-text">Validación con operación real + comentarios<small>Flujo real de solicitud, asignación y recolección en domicilios externos de HRV</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">3</div><div class="cs-text">Fit con tecnología LOOP desarrollada<small>Puntos adicionales a desarrollar para fluidez operativa en recolección real</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">4</div><div class="cs-text">Liberación de features<small>Ajustes en app Recolector y admin para cubrir el flujo real</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">5</div><div class="cs-text">Implementación en ambiente controlado y pruebas con HRV<small>Prueba end-to-end: solicitud → asignación → recolección → registro</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">6</div><div class="cs-text">Validación oficial → operación libre<small>A partir de esta fecha HRV opera la recolección de forma autónoma</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+          </div>
+        </div>
+
+        <!-- BLOQUE 3: TRAZABILIDAD Y REPORTES -->
+        <div class="bloque" id="b3">
+          <div class="bloque-header" onclick="toggleB('b3')">
+            <span class="bloque-icon">📊</span>
+            <span class="bloque-title">Trazabilidad y generación de reportes</span>
+            <span class="bloque-badge bb-next">Próximo</span>
+            <span class="bloque-chev" id="bchev-b3">▼</span>
+          </div>
+          <div class="bloque-body" id="bbody-b3">
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Requerimientos escritos de HRV<small>Documentación sobre flujo de salida a transformadoras y generación de reportes CO₂</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">2</div><div class="cs-text">Validación con operación real + comentarios<small>Flujo de pesaje conjunto, recibo de transformadora y trazabilidad de residuos entregados</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">3</div><div class="cs-text">Fit con tecnología LOOP desarrollada<small>Contraste con el módulo de reportes ESG y CO₂ existente en la plataforma</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">4</div><div class="cs-text">Liberación de features<small>Registro de salidas a transformadoras, trazabilidad completa recolectados + entregados</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">5</div><div class="cs-text">Implementación en ambiente controlado y pruebas con HRV<small>Generación del primer reporte real con datos de la operación</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">6</div><div class="cs-text">Validación oficial → operación libre<small>A partir de esta fecha HRV genera y entrega reportes de forma autónoma</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+          </div>
+        </div>
+
+        <!-- BLOQUE 4: APP USUARIO + MICELIO -->
+        <div class="bloque" id="b4">
+          <div class="bloque-header" onclick="toggleB('b4')">
+            <span class="bloque-icon">🌱</span>
+            <span class="bloque-title">App usuario + Micelio</span>
+            <span class="bloque-badge bb-next">Próximo</span>
+            <span class="bloque-chev" id="bchev-b4">▼</span>
+          </div>
+          <div class="bloque-body" id="bbody-b4">
+            <div class="cycle-step"><div class="cs-num cs-done">✓</div><div class="cs-text">Requerimientos escritos de HRV<small>Documentación sobre el programa de recompensas Micelio y Valor Semilla</small></div><span class="cs-tag ct-done">Listo</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">2</div><div class="cs-text">Validación con operación real + comentarios<small>Flujo de registro de usuarios, acumulación de Valor Semilla y canje en HRV</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">3</div><div class="cs-text">Fit con tecnología LOOP desarrollada<small>Contraste del módulo Micelio con el programa Pacto con la Tierra de HRV</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">4</div><div class="cs-text">Liberación de features<small>Sucursales en app usuario, catálogo de canje HRV, activación de Valor Semilla</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">5</div><div class="cs-text">Implementación en ambiente controlado y pruebas con HRV<small>Prueba del ciclo completo con usuarios reales de la comunidad HRV</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+            <div class="cycle-step"><div class="cs-num cs-pend">6</div><div class="cs-text">Validación oficial → operación libre<small>A partir de esta fecha la comunidad HRV opera Micelio de forma autónoma</small></div><span class="cs-tag ct-pend">Pendiente</span></div>
+          </div>
+        </div>
+
         </div>
       </div>
     </div>
@@ -188,18 +344,22 @@
       <div class="phase-header" onclick="toggle('p2')">
         <div class="phase-num n-pending">2</div>
         <div class="phase-info">
-          <div class="phase-title">Reportes y trazabilidad</div>
-          <div class="phase-sub">Datos de impacto, CO₂ y reporte de residuos</div>
+          <div class="phase-title">Optimización</div>
+          <div class="phase-sub">Semanas 9–12 · Ajuste de parámetros con datos reales</div>
         </div>
         <span class="badge b-pending">Por iniciar</span>
         <span class="chevron" id="chev-p2">▼</span>
       </div>
       <div class="phase-body" id="body-p2">
+        <div class="process-note">
+          Con los datos de la Fase 1, revisamos y afinamos la operación: factores de CO₂, capacidad real del nodo y el modelo de Valor Semilla. Esta fase cierra con la definición final del catálogo de materiales y los parámetros para la Fase 3.
+        </div>
         <div class="milestones">
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Primer reporte de residuos acopiados generado</div><span class="m-tag t-pend">Pendiente</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Reporte de huella de carbono (CO₂ eq.) disponible para HRV</div><span class="m-tag t-pend">Pendiente</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Dashboard de impacto accesible para el equipo HRV</div><span class="m-tag t-pend">Pendiente</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Integración de empresas aliadas al ecosistema de trazabilidad</div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">1</div><div class="m-text">Revisión y corrección de factores CO₂ con base en operación real<small>Resolución de discrepancias en colillas, pilas y electrónicos</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">2</div><div class="m-text">Validación de capacidad real del nodo de acopio HRV<small>Volúmenes, frecuencias y restricciones operativas documentadas</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">3</div><div class="m-text">Diagnóstico operativo conjunto LOOP × HRV<small>Revisión de todo lo aprendido en la Fase 1 y definición de mejoras</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">4</div><div class="m-text">Definición final del catálogo de materiales activos<small>Lista cerrada de residuos aceptados con sus factores CO₂ validados</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">5</div><div class="m-text">Modelo de Valor Semilla definido para la Fase 3<small>Factores CO₂ → Semilla por categoría y catálogo de canje HRV</small></div><span class="m-tag t-pend">Pendiente</span></div>
         </div>
       </div>
     </div>
@@ -209,17 +369,22 @@
       <div class="phase-header" onclick="toggle('p3')">
         <div class="phase-num n-pending">3</div>
         <div class="phase-info">
-          <div class="phase-title">Escala y alianzas corporativas</div>
-          <div class="phase-sub">Empresas, reporte ESG y modelo sostenible</div>
+          <div class="phase-title">Apertura Micelio</div>
+          <div class="phase-sub">Semana 13+ · Comunidad, Valor Semilla y alianzas corporativas</div>
         </div>
         <span class="badge b-pending">Por iniciar</span>
         <span class="chevron" id="chev-p3">▼</span>
       </div>
       <div class="phase-body" id="body-p3">
+        <div class="process-note">
+          Sujeta a la aprobación de ambas partes con base en los resultados de las Fases 1 y 2. Su activación requiere la firma de un addendum al Convenio de Colaboración.
+        </div>
         <div class="milestones">
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Incorporación de empresas corporativas al ecosistema LOOP × HRV</div><span class="m-tag t-pend">Pendiente</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Entrega del primer reporte ESG corporativo desde la plataforma</div><span class="m-tag t-pend">Pendiente</span></div>
-          <div class="milestone"><div class="m-icon i-pend">○</div><div class="m-text">Modelo de economía circular completo en operación</div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">1</div><div class="m-text">Activación del módulo Micelio con registro abierto de usuarios<small>App disponible en Play Store para la comunidad HRV</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">2</div><div class="m-text">Asignación de Valor Semilla por acciones climáticas verificadas<small>Sistema de recompensas activo para socios Micelio de HRV</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">3</div><div class="m-text">Campañas de activación comunitaria en HRV</div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">4</div><div class="m-text">Primer reporte ESG corporativo entregado desde la plataforma<small>Reporte de impacto para empresas aliadas de HRV</small></div><span class="m-tag t-pend">Pendiente</span></div>
+          <div class="milestone"><div class="m-step pend">5</div><div class="m-text">Modelo de economía circular completo en operación<small>Empresas + comunidad + recolectores trazados en un solo ecosistema</small></div><span class="m-tag t-pend">Pendiente</span></div>
         </div>
       </div>
     </div>
@@ -232,21 +397,20 @@
   </div>
 
 </div>
-
 <script>
   function toggle(id) {
     var body = document.getElementById('body-' + id);
     var chev = document.getElementById('chev-' + id);
     var isOpen = body.classList.contains('open');
-    if (isOpen) {
-      body.style.display = 'none';
-      body.classList.remove('open');
-      if (chev) chev.classList.remove('open');
-    } else {
-      body.style.display = 'block';
-      body.classList.add('open');
-      if (chev) chev.classList.add('open');
-    }
+    if (isOpen) { body.style.display='none'; body.classList.remove('open'); if(chev) chev.classList.remove('open'); }
+    else { body.style.display='block'; body.classList.add('open'); if(chev) chev.classList.add('open'); }
+  }
+  function toggleB(id) {
+    var body = document.getElementById('bbody-' + id);
+    var chev = document.getElementById('bchev-' + id);
+    var isOpen = body.classList.contains('open');
+    if (isOpen) { body.style.display='none'; body.classList.remove('open'); if(chev) chev.classList.remove('open'); }
+    else { body.style.display='block'; body.classList.add('open'); if(chev) chev.classList.add('open'); }
   }
 </script>
 </body>
