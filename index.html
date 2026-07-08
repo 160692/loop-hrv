@@ -9,10 +9,16 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html {
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #111;
       min-height: 100vh;
+      width: 100%;
+      overflow-x: hidden;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -26,6 +32,7 @@
       width: 100%;
       max-width: 760px;
       color: #e0e0e0;
+      overflow: hidden;
     }
 
     /* ── HEADER ── */
@@ -33,6 +40,7 @@
       display: flex; align-items: center; gap: 16px;
       margin-bottom: 1.75rem; padding-bottom: 1.25rem;
       border-bottom: 1px solid #252525;
+      overflow: hidden;
     }
     .logo-img { width: 52px; height: auto; flex-shrink: 0; }
     .header-titles { flex: 1; min-width: 0; }
@@ -213,33 +221,44 @@
     .footer-note { font-size: 11px; color: #333; }
     .footer-url  { font-size: 11px; color: #3A9BAF; opacity: .4; }
 
+    /* prevent any child from breaking out */
+    .phase, .bloque, .milestone, .cycle-step, .method-banner {
+      max-width: 100%;
+      overflow: hidden;
+    }
+
     /* ── RESPONSIVE MOBILE ── */
-    @media (max-width: 480px) {
-      body { padding: 0.75rem 0.5rem 2rem; }
-      .card { padding: 1.25rem 1rem; border-radius: 16px; }
-      .header { gap: 12px; }
-      .logo-img { width: 40px; }
-      .brand-name { font-size: 9px; letter-spacing: 1.5px; }
+    @media (max-width: 540px) {
+      body { padding: 0 0 2rem; }
+      .card { padding: 1.25rem 1rem; border-radius: 0; min-height: 100vh; }
+      .header { gap: 12px; flex-wrap: nowrap; }
+      .logo-img { width: 38px; }
+      .brand-name { font-size: 9px; letter-spacing: 1px; }
       .pilot-title { font-size: 15px; }
       .header-meta { display: none; }
-      .phase-header { padding: 12px 12px; }
+      .phase-header { padding: 11px 12px; gap: 8px; }
       .phase-title { font-size: 12px; }
       .phase-sub { font-size: 10px; }
-      .phase-body { padding: 0 12px 14px; }
-      .bloque-header { padding: 9px 12px; }
-      .bloque-body { padding: 6px 12px 10px; }
-      .badge { font-size: 9px; padding: 3px 7px; }
-      .cs-text { font-size: 11px; }
-      .cs-text small { font-size: 10px; }
-      .m-text { font-size: 11px; }
-      .m-text small { font-size: 10px; }
-      .method-banner { padding: 10px 12px; }
+      .phase-body { padding: 0 10px 12px; }
+      .bloque-header { padding: 9px 10px; gap: 8px; }
+      .bloque-body { padding: 6px 10px 10px; }
+      .badge { font-size: 9px; padding: 2px 7px; }
+      .bloque-badge { font-size: 9px; padding: 2px 7px; }
+      .cs-text { font-size: 12px; }
+      .cs-text small { font-size: 11px; }
+      .m-text { font-size: 12px; }
+      .m-text small { font-size: 11px; }
+      .method-banner { padding: 10px 12px; gap: 8px; }
       .method-text { font-size: 11px; }
-      .process-note { font-size: 11px; }
+      .process-note { font-size: 11px; padding: 8px 12px; }
+      .chevron { display: none; }
+      .bloque-chev { display: none; }
+      .footer { flex-direction: column; align-items: flex-start; gap: 4px; }
     }
 
     /* ── RESPONSIVE TABLET ── */
-    @media (min-width: 481px) and (max-width: 768px) {
+    @media (min-width: 541px) and (max-width: 768px) {
+      body { padding: 1rem 0.75rem 2rem; }
       .card { padding: 1.5rem; }
       .logo-img { width: 46px; }
       .pilot-title { font-size: 16px; }
